@@ -4,7 +4,7 @@ import "./index.css";
 
 const Square = (props) => {
   return (
-    <button className="square" onClick={() => props.onClick()}>
+    <button className="square" onClick={props.onClick}>
       {props.value}
     </button>
   );
@@ -29,6 +29,7 @@ class Board extends React.Component {
       />
     );
   }
+
   render() {
     return (
       <div>
@@ -61,6 +62,7 @@ class Game extends React.Component {
           squares: Array(9).fill(null),
         },
       ],
+      stepNumber: 0,
       xIsNext: true,
     };
   }
